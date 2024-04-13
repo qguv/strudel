@@ -1,0 +1,44 @@
+/*
+  "creepy crawly"
+  @by madwithcolors
+  @url https://soundcloud.com/madwithcolors
+  @license CC BY-NC-SA
+*/
+
+stack(silence
+
+  ,stack(silence
+
+    ,s("[bd:<1 0!3> hh rim bd hh rim rim*[2|4] bd],[hh hh oh -]*2")
+    .hurry("[1|2|1|2|0.5]*[7|8]")
+    .room(.025)
+
+    ,s("[[hh*<2!2 [2|[8 4]] 2>,<- sd:1>] <oh!2 hh*2 oh>]*4")
+    .mask("[- x] x".slow(16))
+    .gain(.7)
+  )
+  .bank("RolandTR808")
+
+  ,stack(silence
+
+    ,n("0 2 4 [4|5]*2")
+    .ply("<1 2> 1 1 1")
+    .clip(.5)
+    .s("sawtooth")
+
+    ,"x@2 - x -@4"
+    .fast(2)
+    .n("0,2,4")
+    .add(n(7*3))
+    .ply("<1 2> 1")
+    .s("supersaw")
+
+  )
+  .cutoff(tri.range(4000, 1000))
+  .lpattack(1)
+  .lpdecay(1)
+  .reset("<x!3 [x*2 [x*4 x*2]]>")
+  .scale("<g1:minor [c2:minor g2:minor] g1:minor!2>")
+  .mask("- x".slow(16))
+)
+.reset("<x!7 [x*2 [x*4 x*2]]>")
