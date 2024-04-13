@@ -12,10 +12,12 @@ stack(silence
     ,s("[bd:<1 0!3> hh rim bd hh rim rim*[2|4] bd],[hh hh oh -]*2")
     .hurry("[1|2|1|2|0.5]*[7|8]")
     .room(.025)
+    .color('#555')
 
     ,s("[[hh*<2!2 [2|[8 4]] 2>,<- sd:1>] <oh!2 hh*2 oh>]*4")
     .mask("[- x] x".slow(16))
     .gain(.7)
+    .color('#111')
   )
   .bank("RolandTR808")
 
@@ -25,6 +27,7 @@ stack(silence
     .ply("<1 2> 1 1 1")
     .clip(.5)
     .s("sawtooth")
+    .color('indigo')
 
     ,"x@2 - x -@4"
     .fast(2)
@@ -32,6 +35,7 @@ stack(silence
     .add(n(7*3))
     .ply("<1 2> 1")
     .s("supersaw")
+    .color('pink')
 
   )
   .cutoff(tri.range(4000, 1000))
@@ -41,4 +45,7 @@ stack(silence
   .scale("<g1:minor [c2:minor g2:minor] g1:minor!2>")
   .mask("- x".slow(16))
 )
+.punchcard()
 .reset("<x!7 [x*2 [x*4 x*2]]>")
+
+// vi: set syntax=javascript ts=2 sts=2 sw=2 et:
